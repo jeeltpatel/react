@@ -5,8 +5,8 @@ import { useEffect } from 'react'
 import Container from '../components/container/Container'
 import PostCard from "../components/PostCard"
 
-function Home() {
 
+function AllPosts() {
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
@@ -16,18 +16,7 @@ function Home() {
       }
     })
   }, [])
-  if (posts.length === 0) {
-    return (
-      <div className='w-full py-8'>
-      <Container>
-        <div className="flex flex-wrap">
-          <h1>Login to read posts</h1>
-        </div>
-      </Container>
-    </div>
-    )
-  }
-
+  //TODO: add case for array length 0
   return (
     <div className='w-full py-8'>
       <Container>
@@ -43,4 +32,4 @@ function Home() {
   )
 }
 
-export default Home
+export default AllPosts
